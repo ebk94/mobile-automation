@@ -22,7 +22,7 @@ public class AppiumDriverUtil {
             desiredCapabilities.setCapability("appActivity", "com.wdiodemoapp.MainActivity");
 
             try {
-                URL apiServer = new URL("http://localhost:4723/wd/hub");
+                URL apiServer = new URL(Constants.URL);
                 driver = new AppiumDriver(apiServer, desiredCapabilities);
                 driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
             } catch (MalformedURLException e) {
